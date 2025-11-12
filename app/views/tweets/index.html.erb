@@ -1,16 +1,10 @@
 <%= stylesheet_link_tag 'tweetindex', :media => "all" %>
 
 <h3>投稿を検索</h3>
- <div class="search-box-write">
         <%= form_tag({controller:"tweets",action:"index"}, method: :get) do %>
-         <%= text_field_tag :search, nil, size: 10 %>
- </div>
-
- <div class="search-box-push">
-          <%= submit_tag '検索する'  %>
-         <% end %>
- </div>
-
+         <%= text_field_tag :search, nil, size: 10, class: "search-write" %>
+          <%= submit_tag '検索する', class: "search-push" %>
+        <% end %>
 
 <h3>Tweet一覧</h3>
 <div class="tweets-container">

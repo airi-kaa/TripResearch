@@ -5,10 +5,14 @@
     <p class="title">投稿フォーム</p>
     <%= form_for(@tweet, :url => { controller:'tweets', action:'create'})do |f| %>
        <div class="field"> 
-         <%= f.label :国名 %>
+        <div>
+         <h3>国名</h3>
          <%= f.text_field :content, class: "hoge", size: 80 %>
+        </div>
+        <div>
          <%= f.label :場所や食べ物 %>
          <%= f.text_field :name, class: "hoge", size: 80 %>
+        </div>
        </div>
        <div class="field">
          <%= f.label :日付 %>

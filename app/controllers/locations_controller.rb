@@ -22,14 +22,14 @@ class LocationsController < ApplicationController
   end
 
   def destroy
-    @locations = Location.find(params[:id])
-    @location.destroy
+    locations = Location.find(params[:id])
+    locations.destroy
     redirect_to action: :index
   end
 
   private
 
   def location_params
-    params.require(:location).permit(:name,:username, :overall,:distance, :cost, :food)
+    params.require(:location).permit(:name,:username, :overall,:distance, :cost, :food, :camera)
   end
 end

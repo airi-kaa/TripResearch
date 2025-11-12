@@ -2,7 +2,7 @@ class TweetsController < ApplicationController
   def index
     if params[:search].present?
         search = params[:search]
-        @tweets = Tweet.where("locate LIKE ? OR content LIKE ? OR date LIKE ?", "%#{search}%", "%#{search}%" , "%#{search}%")
+        @tweets = Tweet.where("locate LIKE ? OR content LIKE ? OR money LIKE ? OR name LIKE ?",  "%#{search}%" , "%#{search}%" , "%#{search}%", "%#{search}%")
       else
         @tweets = Tweet.all
     end
