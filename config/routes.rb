@@ -1,6 +1,4 @@
 Rails.application.routes.draw do
-  get "locations/index"
-  get "locations/new"
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 
   # Reveal health status on /up that returns 200 if the app boots with no exceptions, otherwise 500.
@@ -14,9 +12,9 @@ Rails.application.routes.draw do
   # Defines the root path route ("/")
   # root "posts#index"
   
-  root 'locations#index'
   resources :tweets
   resources :travels
   resources :locations, except: [:show]
   get 'locations/ranking', to: 'locations#ranking', as: 'ranking_locations'
+  root 'locations#index'
 end
