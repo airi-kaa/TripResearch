@@ -1,0 +1,50 @@
+<%= stylesheet_link_tag 'new', :media => "all" %>
+<h3>新規traveler</h3>
+
+<div class="post-container">
+    <p class="title">投稿フォーム</p>
+    <%= form_for(@tweet, :url => { controller:'tweets', action:'create'})do |f| %>
+       <div class="field"> 
+         <%= f.label :国名 %>
+         <%= f.text_field :content, class: "hoge", size: 80 %>
+         <%= f.label :場所や食べ物 %>
+         <%= f.text_field :name, class: "hoge", size: 80 %>
+       </div>
+       <div class="field">
+         <%= f.label :日付 %>
+         <%= f.date_field :date, class: "hoge" %>
+         <%= f.label :旅行日数 %>
+         <%= f.number_field :days, class: "hoge", min: 0, max: 365 %>
+       </div>
+       <div class="field">
+        <%= f.label :費用 %>
+        <p>0円: <%= f.radio_button :money, '0円' %></p>
+        <p>~3万円: <%= f.radio_button :money, '~3万円' %></p>
+        <p>3万円~7万円: <%= f.radio_button :money, '3万円~7万円' %></p>
+        <p>7万円~15万円: <%= f.radio_button :money, '7万円~15万円' %></p>
+        <p>15万円~30万円: <%= f.radio_button :money, '15万円~30万円' %></p>
+        <p>30万円~100万円: <%= f.radio_button :money, '30万円~100万円' %></p>
+        <p>100万円~: <%= f.radio_button :money, '100万円~' %></p>
+       </div>
+       <div class="field">
+        <%= f.label :地域 %>
+        <p>アジア: <%= f.check_box :locate, { multiple: true, include_hidden: false }, "アジア" %></p>
+        <p>ヨーロッパ: <%= f.check_box :locate, { multiple: true, include_hidden: false }, "ヨーロッパ" %></p>
+        <p>北アメリカ: <%= f.check_box :locate, { multiple: true, include_hidden: false }, "北アメリカ" %></p>
+        <p>南アメリカ: <%= f.check_box :locate, { multiple: true, include_hidden: false }, "南アメリカ" %></p>
+        <p>アフリカ: <%= f.check_box :locate, { multiple: true, include_hidden: false }, "アフリカ" %></p>
+        <p>オセアニア: <%= f.check_box :locate, { multiple: true, include_hidden: false }, "オセアニア" %></p>
+        <p>中東: <%= f.check_box :locate, { multiple: true, include_hidden: false }, "中東" %></p>
+       </div>
+
+       <div class="field">
+         <%= f.label :思い出の写真 %>
+         <%= f.file_field :image %>
+       </div>
+    
+    
+    <%= f.submit "送信"%>
+    
+    <br>
+    <% end %>
+</div>

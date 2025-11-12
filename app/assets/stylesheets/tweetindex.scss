@@ -1,0 +1,59 @@
+.tweets-container {
+  width: 50%;
+  margin: 10px auto;
+}
+h1 {
+  width: 100px;
+  margin: 30px auto;
+  text-align: center;
+}
+h3 {
+  width: 100px;
+  margin: 30px auto;
+  text-align: center;
+}
+.tweet {
+  border-top: 2px solid #00acee;
+  margin-top: 10px;
+  padding-top: 20px;
+}
+.main-box {
+  display: flex;
+  width: 80%;
+  margin: 0 auto;
+  max-width: 500px;
+  margin-left: 40%;
+  margin-right: 60%;
+}
+.search-box書き込む {
+  display: flex;
+  width: 80%;
+  margin: 0 auto;
+  max-width: 500px;
+  margin-left: 39%;
+  margin-right: 10%;
+}
+.search-box押しボタン {
+  display: flex;
+  width: 80%;
+  margin: 0 auto;
+  max-width: 500px;
+  margin-left: 43%;
+  margin-right: 10%;
+}
+input[type="text"] {
+  width: 300%;
+  height: 40px;
+}
+.time {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.tweets-image {
+  display: flex;            /* フレックスボックスを有効にする */
+  justify-content: center;  /* 横方向の中央揃え */
+  align-items: center;      /* 縦方向の中央揃え */
+  max-width: 100%;          /* 画面幅に合わせて縮小 */
+  height: auto;             /* コンテナの高さを画面全体にする場合 */
+}

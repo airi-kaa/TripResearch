@@ -1,0 +1,13 @@
+<h1>国ランキング</h1>
+
+<ol>
+  <% @locations.each_with_index do |location, i| %>
+    <li>
+      <strong><%= i + 1 %>位：</strong>
+      <%= location.name %>（スコア：<%= location.overall %>）
+    </li>
+  <% end %>
+</ol>
+
+<%= link_to "一覧に戻る", locations_path %>
+<%= link_to '新規登録をする', locations_new_path%>

@@ -1,0 +1,73 @@
+<h1>あなたのこだわりから新たな国に出会おう！</h1>
+<h3>総合評価だけじゃない！星の数で直感チェックしよう。</h3>
+<% @locations.each do |t|%>
+<div style = 'margin:20px; border:2px double black; width:500px;padding-left:20px;'>
+   <h2>国名<country>:<%= t.name %> </h2>
+   <h4>投稿者<username>:<%= t.username%></h4>
+
+   <!--- 総合評価の星の部分 ---------->
+
+<div>
+<h2>総合評価：
+<span class="star-rating">
+   <span class="star-rating-front" style="width: <%= getPercent(t.overall) %>%;">★★★★★</span>
+   <span class="star-rating-back">★★★★★</span>
+</span> 
+</h2>
+</div>
+
+<!--- 総合評価の星の部分終わり------->
+
+<!--- 日本からかかる時間の星の部分 ---------->
+
+<div>
+<h2>日本からかかる時間：
+<span class="star-rating">
+   <span class="star-rating-front" style="width: <%= getPercent(t.distance) %>%;">★★★★★</span>
+   <span class="star-rating-back">★★★★★</span>
+</span> 
+</h2>
+</div>
+
+<!--- 日本からかかる時間の星の部分終わり------->
+
+
+<!--- コスパの星の部分 ------------>
+<div>
+<h2>コスパ：
+<span class="star-rating">
+   <span class="star-rating-front" style="width: <%= getPercent(t.cost) %>%;">★★★★★</span>
+   <span class="star-rating-back">★★★★★</span>
+</span>
+</h2>
+</div>
+<!--- コスパレベルの星の部分終わり-------->
+
+<!--- グルメの星の部分 ------------>
+<div>
+<h2>グルメ：
+<span class="star-rating">
+   <span class="star-rating-front" style="width: <%= getPercent(t.food) %>%;">★★★★★</span>
+   <span class="star-rating-back">★★★★★</span>
+</span>
+</h2>
+</div>
+<!--- グルメの星の部分終わり-------->
+
+<!--- SNS映えの星の部分 ------------>
+<div>
+<h2>SNS映え:
+<span class="star-rating">
+   <span class="star-rating-front" style="width: <%= getPercent(t.camera) %>%;">★★★★★</span>
+   <span class="star-rating-back">★★★★★</span>
+</span>
+</h2>
+</div>
+<!--- SNS映えの星の部分終わり-------->
+
+<%= link_to "削除する", locations_path(t.id), data: { turbo_method: :delete } %>
+</div>
+<% end %>
+
+<%= link_to '新規登録をする', locations_new_path%>
+<%= link_to "ランキングを見る", ranking_locations_path %>

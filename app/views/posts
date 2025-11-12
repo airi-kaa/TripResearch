@@ -1,0 +1,9 @@
+<h1>投稿ランキング</h1>
+<ol>
+  <% @posts.order(overall: :desc).each_with_index do |post, index| %>
+    <li>
+    　<strong>順位 <%= index %>.</strong>
+      <%= post.title %> (☆ <%= post.overall %>)
+    </li>
+  <% end %>
+</ol>

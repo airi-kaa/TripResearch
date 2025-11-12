@@ -1,0 +1,42 @@
+<%= stylesheet_link_tag 'tweetindex', :media => "all" %>
+
+<h3>投稿を検索</h3>
+ <div class="search-box書き込む">
+        <%= form_tag({controller:"tweets",action:"index"}, method: :get) do %>
+         <%= text_field_tag :search, nil, size: 10 %>
+ </div>
+
+ <div class="search-box押しボタン">
+          <%= submit_tag '検索する'  %>
+         <% end %>
+ </div>
+
+
+<h3>Tweet一覧</h3>
+<div class="tweets-container">
+  <% @tweets.each do |t| %>
+    <div class="tweet">
+      <div class="tweet-left">
+        <p><%= t.content %></p>
+        <p><%= JSON.parse(t.locate).join("、") %></p>
+      </div>
+      <div class="tweets-image">
+        <% if t.image.attached? %>
+          <%= image_tag t.image, size: '250x200' %>
+        <% else %>
+          <p>画像はありません</p>
+        <% end %>
+      </div>
+
+      <div class="tweet-right">
+        <p><%= t.name %></p>
+        <p><%= t.date %></p>
+        <p><%= t.days %></p>
+        <p><%= t.money %></p>
+        <%= link_to "詳細へ", tweet_path(t.id) %>
+        <%= link_to "編集する", edit_tweet_path(t.id) %>
+        <%= link_to "削除する", tweet_path(t.id), data: { turbo_method: :delete } %>
+      </div>
+    </div>
+  <% end %>
+</div>

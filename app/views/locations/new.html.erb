@@ -1,0 +1,100 @@
+<h1>TRIP HIGHLIGHTS</h1>
+<%= form_with model: @location do |f| %>
+  <div class="location_form">
+  <h3>大学生のあなたの、リアルな声を届けよう！</h3>
+  <%= f.text_field :name , placeholder: '国名を入力', class:'name_field'%>
+  <%= f.text_field :username , placeholder: '投稿者名を入力', class:'name_field'%>
+
+  <h5>総合評価</h5>
+   <div class="post_form">
+    <%= f.radio_button :overall, 5 ,id: 'star1'%>
+    <label for="star1"><span class="text">最高</span>★</label>
+
+    <%= f.radio_button :overall, 4 ,id: 'star2'%>
+    <label for="star2"><span class="text">良い</span>★</label>
+
+    <%= f.radio_button :overall, 3 ,id: 'star3'%>
+    <label for="star3"><span class="text">普通</span>★</label>
+
+    <%= f.radio_button :overall, 2 ,id: 'star4'%>
+    <label for="star4"><span class="text">悪い</span>★</label>
+
+    <%= f.radio_button :overall, 1 ,id: 'star5'%>
+    <label for="star5"><span class="text">最悪</span>★</label>
+ </div>
+
+  <h5>日本からかかる時間</h5>
+   <div class="post_form">
+    <%= f.radio_button :distance, 5 ,id: 'star6'%>
+    <label for="star6"><span class="text">近い</span>★</label>
+
+    <%= f.radio_button :distance, 4 ,id: 'star7'%>
+    <label for="star7"><span class="text">やや近い</span>★</label>
+
+    <%= f.radio_button :distance, 3 ,id: 'star8'%>
+    <label for="star8"><span class="text">普通</span>★</label>
+
+    <%= f.radio_button :distance, 2 ,id: 'star9'%>
+    <label for="star9"><span class="text">やや遠い</span>★</label>
+
+    <%= f.radio_button :distance, 1 ,id: 'star10'%>
+    <label for="star10"><span class="text">遠い</span>★</label>
+ </div>
+
+<h5>コスパ</h5>
+  <div class="post_form">
+    <%= f.radio_button :cost,  5 ,id: 'star11'%>
+    <label for="star11"><span class="text">安い</span>★</label>
+
+    <%= f.radio_button :cost,  4 ,id: 'star12'%>
+    <label for="star12"><span class="text">やや安い</span>★</label>
+
+    <%= f.radio_button :cost, 3 ,id: 'star13'%>
+    <label for="star13"><span class="text">普通</span>★</label>
+
+    <%= f.radio_button :cost , 2 ,id: 'star14'%>
+    <label for="star14"><span class="text">やや高い</span>★</label>
+
+    <%= f.radio_button :cost , 1 ,id: 'star15'%>
+    <label for="star15"><span class="text">とても高い</span>★</label>
+ </div>
+
+ <h5>グルメ</h5>
+   <div class="post_form">
+    <%= f.radio_button :food, 5 ,id: 'star16'%>
+    <label for="star16"><span class="text">最高</span>★</label>
+
+    <%= f.radio_button :food, 4 ,id: 'star17'%>
+    <label for="star17"><span class="text">良い</span>★</label>
+
+    <%= f.radio_button :food, 3 ,id: 'star18'%>
+    <label for="star18"><span class="text">普通</span>★</label>
+
+    <%= f.radio_button :food, 2 ,id: 'star19'%>
+    <label for="star19"><span class="text">微妙</span>★</label>
+
+    <%= f.radio_button :food, 1 ,id: 'star20'%>
+    <label for="star20"><span class="text">悪い</span>★</label>
+ </div>
+
+ <h5>SNS映え</h5>
+   <div class="post_form">
+    <%= f.radio_button :camera, 5 ,id: 'star21'%>
+    <label for="star21"><span class="text">最高</span>★</label>
+
+    <%= f.radio_button :camera, 4 ,id: 'star22'%>
+    <label for="star22"><span class="text">良い</span>★</label>
+
+    <%= f.radio_button :camera, 3 ,id: 'star23'%>
+    <label for="star23"><span class="text">普通</span>★</label>
+
+    <%= f.radio_button :camera, 2 ,id: 'star24'%>
+    <label for="star24"><span class="text">微妙</span>★</label>
+
+    <%= f.radio_button :camera, 1 ,id: 'star25'%>
+    <label for="star25"><span class="text">悪い</span>★</label>
+ </div>
+
+  </div>
+  <%= f.submit '送信'%>
+<% end %>

@@ -1,0 +1,38 @@
+<%= form_for(@travel, class: 'form-horizontal', role: 'form') do |f| %>
+  <div class="travel-container">
+   <h1>旅パーソナリティ診断</h1>
+   
+    <div class="col-12">
+      <p>Q1. 次の海外旅行は…</p>
+    </div>
+    <div class="col-6">
+      <%= f.radio_button :question1, "1", id: "custom_id1" %>
+      <label for="custom_id1">遠くにも行ってみたい</label>
+      <%= f.radio_button :question1, "2", id: "custom_id2" %>
+      <label for="custom_id2">近場で楽しみたい</label>
+    </div>
+
+    <div class="col-12">
+      <p>Q2. 海外旅行にはお金を…</p>
+    </div>
+    <div class="col-6">
+      <%= f.radio_button :question2, "1", id: "custom_id3" %>
+      <label for="custom_id3">比較的出せる方だ</label>
+      <%= f.radio_button :question2, "2", id: "custom_id4" %>
+      <label for="custom_id4">なるべく抑えていきたい</label>
+    </div>
+
+    <div class="col-12">
+      <p>Q3. 旅行先での至福の時間は…</p>
+    </div>
+    <div class="col-6">
+      <%= f.radio_button :question3, "1", id: "custom_id5" %>
+      <label for="custom_id5">なんといっても食事だ</label>
+      <%= f.radio_button :question3, "2", id: "custom_id6" %>
+      <label for="custom_id6">観光を楽しんでこそ旅行だ</label>
+    </div>
+
+  <div class="sindanbotan">
+    <%= f.submit "結果" %>
+  </div>
+<% end %>
