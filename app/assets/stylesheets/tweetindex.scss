@@ -26,7 +26,7 @@ h3 {
   margin-left: 40%;
   margin-right: 60%;
 }
-.search-box書き込む {
+.search-box-write {
   display: flex;
   width: 80%;
   margin: 0 auto;
@@ -34,7 +34,7 @@ h3 {
   margin-left: 39%;
   margin-right: 10%;
 }
-.search-box押しボタン {
+.search-box-push {
   display: flex;
   width: 80%;
   margin: 0 auto;
@@ -57,4 +57,15 @@ input[type="text"] {
   align-items: center;      /* 縦方向の中央揃え */
   max-width: 100%;          /* 画面幅に合わせて縮小 */
   height: auto;             /* コンテナの高さを画面全体にする場合 */
+  margin:  0 auto;
+}
+
+.tweet-left {
+ width: 33.33%;
+ float: left;
+}
+
+.tweet-right {
+ width: 33.33%;
+ float: right;
 }

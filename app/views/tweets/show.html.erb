@@ -1,17 +1,23 @@
 <h3>Tweet詳細</h3>
-<div class="tweet">
-  <p><%= @tweet.content %></p>
-  <p><%= @tweet.name %></p>
-  <p><%= @tweet.date %></p>
-  <p><%= @tweet.days %></p>
-  <p><%= @tweet.money %></p>
-  <p><%= @tweet.locate %></p>
-  <% if @tweet.image.attached? %>
-    <%= image_tag @tweet.image, size: "250x200" %>
-  <% else %>
-    <p>画像はありません</p>
-  <% end %>
-  <p><%= @tweet.created_at %></p>
+<div class="tweets-container">
+  <div class="tweet">
+      <div class="tweet-left">
+        <p><%= @tweet.content %></p>
+        <p><%= JSON.parse(@tweet.locate).join("、") %></p>
+      </div>
+      <div class="tweets-image">
+        <% if @tweet.image.attached? %>
+          <%= image_tag @tweet.image, size: '250x200' %>
+        <% else %>
+          <p>画像はありません</p>
+        <% end %>
+      </div>
+      <div class="tweet-right">
+        <p><%= @tweet.name %></p>
+        <p><%= @tweet.date %></p>
+        <p><%= @tweet.days %></p>
+        <p><%= @tweet.money %></p>
+      </div>
+  </div>
 </div>
-
 <%= link_to "Tweet一覧に戻る", tweets_path %>
