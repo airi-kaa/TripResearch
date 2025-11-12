@@ -57,7 +57,7 @@ group :test do
 end
 
 gem 'activestorage-cloudinary-service'
-gem 'carrierwave' , '~> 1.3' ,  '>= 1.3.1'
+gem 'carrierwave' , '~> 2.2'
 gem 'cloudinary'
 gem 'dotenv-rails'
 gem 'sass-rails'
